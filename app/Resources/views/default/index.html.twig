@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+ <div class="container-menu">
+      <div class="menu">
+           <div class="renderpizzas">{{ render_pizzas() | raw }}</div>
+           <div>{{ render_paninis() | raw }}</div>
+           <div>{{ render_texmex() | raw }}</div>
+           <div>{{ render_desserts() | raw }}</div>
+           <div>{{ render_drinks() | raw }}</div>
+       </div>
+       <div id="basket" class="basket">
+       </div>
+       </div>
+</div>
+
+    {% include "inc/footer.html.twig" %}
+
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{ asset("js/menu.js") }}"></script>
+{% endblock %}
+

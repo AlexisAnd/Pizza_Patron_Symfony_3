@@ -1,0 +1,189 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Pizza
+ *
+ * @ORM\Table(name="pizza")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PizzaRepository")
+ */
+class Pizza
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=50)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="price_junior", type="float")
+     */
+    private $priceJunior;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="price_medium", type="float")
+     */
+    private $priceMedium;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="price_big", type="float")
+     */
+    private $priceBig;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return Pizza
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Pizza
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set priceJunior
+     *
+     * @param float $priceJunior
+     *
+     * @return Pizza
+     */
+    public function setPriceJunior($priceJunior)
+    {
+        $this->priceJunior = $priceJunior;
+
+        return $this;
+    }
+
+    /**
+     * Get priceJunior
+     *
+     * @return float
+     */
+    public function getPriceJunior()
+    {
+        return $this->priceJunior;
+    }
+    
+    /**
+     * Set priceBig
+     *
+     * @param float $priceBig
+     *
+     * @return Pizza
+     */
+    public function setPriceBig($priceBig)
+    {
+        $this->priceBig = $priceBig;
+
+        return $this;
+    }
+
+    /**
+     * Get priceBig
+     *
+     * @return float
+     */
+    public function getPriceBig()
+    {
+        return $this->priceBig;
+    }
+
+    /**
+     * Set priceMedium
+     *
+     * @param float $priceMedium
+     *
+     * @return Pizza
+     */
+    public function setPriceMedium($priceMedium)
+    {
+        $this->priceMedium = $priceMedium;
+
+        return $this;
+    }
+
+    /**
+     * Get priceMedium
+     *
+     * @return float
+     */
+    public function getPriceMedium()
+    {
+        return $this->priceMedium;
+    }
+}

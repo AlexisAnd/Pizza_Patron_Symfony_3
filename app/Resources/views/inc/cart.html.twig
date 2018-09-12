@@ -1,0 +1,6 @@
+<div id="cart">
+    {% if gettotal > 0 %}
+        <p>{{ (2.50 + gettotal.total)|number_format(2, '.', ',') }}€</p>
+    {% endif %}
+</div>
+

@@ -1,0 +1,24 @@
+
+{% if gettotal > 0 %}
+{% for list in getlist %}
+    <ul>
+        <li><i class="fa fa-minus-circle"  data-quantity="1" data-itemid="{{ list.id }}"></i></li>
+        <li>{{ list.quantity }}</li>
+        <li>{{ list.name }}</li>
+        <li>{{ list.price * list.quantity |number_format(2, '.', ',') }}</li>
+    </ul>
+{% endfor %}
+{% else %}
+    <p>Votre panier est vide.</p>
+{%  endif %}
+{% if gettotal == true %}
+    {{ gettotal.total |number_format(2, '.', ',') }}
+
+    <a class="btn btn-info" role="button" href="{{ url('app.payment.payment') }}">Finaliser la commande</a>
+{% endif %}
+
+{% block javascript %}
+    <script src="{{ asset("js/basket.js") }}"></script>
+{% endblock %}
+
+

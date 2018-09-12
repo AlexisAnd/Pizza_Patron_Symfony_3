@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h2>Admin Boissons</h2>
+        <div>
+            {% include 'inc/flash_messages.html.twig' %}
+        </div>
+        <a class="btn btn-info" href="{{ url('app.admin.add_drinks') }}" role="button">Ajouter une boisson</a>
+        <a class="btn btn-secondary" href="{{ url('app.admin.admin') }}" role="button">Retour</a>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Desserts</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.price }}</td>
+                    <td><a href="{{ url('app.admin.update_drinks', {'id':result.id}) }}"><i class="fa fa-pencil" aria-hidden="true"></i> Modifier</a></td>
+                    <td><a href="{{ url('app.admin.delete_drinks', {'id':result.id}) }}"><i class="fa fa-trash" aria-hidden="true"></i> Supprimer</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

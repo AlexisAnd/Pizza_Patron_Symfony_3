@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h2>Admin</h2>
+
+        <p>Voici la liste des produits.</p>
+        <div>
+            {% include 'inc/flash_messages.html.twig' %}
+        </div>
+
+        <p>Cliquez sur celui que vous souhaitez pour les modifier, en ajouter ou en supprimer.</p>
+
+        <ul>
+            <li>
+                <h4><a href="{{ url('app.admin.pizzas') }}">Pizzas</a></h4>
+            </li>
+            <li>
+                <h4><a href="{{ url('app.admin.paninis') }}">Paninis</a></h4>
+            </li>
+            <li>
+                <h4><a href="{{ url('app.admin.texmex') }}">Texmex</a></h4>
+            </li>
+            <li>
+                <h4><a href="{{ url('app.admin.desserts') }}">Desserts</a></h4>
+            </li>
+            <li>
+                <h4><a href="{{ url('app.admin.drinks') }}">Boissons</a></h4>
+            </li>
+        </ul>
+    </div>
+
+
+
+{% endblock %}

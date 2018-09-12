@@ -1,0 +1,7 @@
+{% for result in results %}
+    <div class="row">
+        <div class="col-8">{{ result.name }}</div>
+        <div class="col-4">{{ result.price }}</div>
+        <i class="fa fa-plus-circle" aria-hidden="true" data-quantity="1" data-price="{{ result.price }}" data-name="{{ result.name }}" data-texmex="{{ result.id }}"></i>
+    </div>
+{% endfor %}

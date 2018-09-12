@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+
+    <h2 class="mt-4 mb-5 text-center">Bienvenue</h2>
+
+     <div class="row">
+          <div class="col"></div>
+           <div class="col-8">
+               <p>Remplissez les champs ci dessous pour completer votre inscription sur Pizza Patron</p>
+            {{ form_start(form, { 'attr': { 'novalidate': 'novalidate' } }) }}
+
+            <p>
+                {{ form_label(form.firstName, "Prenom:", { 'label_attr': { 'class': 'myclass '}}) }}
+                {{ form_widget(form.firstName) }}
+                {{ form_errors(form.firstName) }}
+            </p>
+            <p>
+                {{ form_label(form.lastName, "Nom de famille:") }}
+                {{ form_widget(form.lastName) }}
+                {{ form_errors(form.lastName) }}
+            </p>
+            <p>
+                {{ form_label(form.address, "Adresse:") }}
+                {{ form_widget(form.address) }}
+                {{ form_errors(form.address) }}
+            </p>
+            <p>
+                {{ form_label(form.city, "Ville:") }}
+                {{ form_widget(form.city) }}
+                {{ form_errors(form.city) }}
+            </p>
+            <p>
+                {{ form_label(form.postalCode, "Code postal:") }}
+                {{ form_widget(form.postalCode) }}
+                {{ form_errors(form.postalCode) }}
+            </p>
+            <p>
+                {{ form_label(form.phone, "Telephone:") }}
+                {{ form_widget(form.phone) }}
+                {{ form_errors(form.phone) }}
+            </p>
+
+            <p>
+                {{ form_label(form.username, 'email:') }}
+                {{ form_widget(form.username) }}
+                {{ form_errors(form.username) }}
+            </p>
+            <p>
+
+                {{ form_widget(form.password) }}
+                {{ form_errors(form.password) }}
+            </p>
+            <p>
+
+            <button type="submit"  class="btn btn-primary" name="validation">Valider</button>
+            {{ form_end(form) }}
+            </p>
+           </div>
+             <div class="col"></div>
+     </div>
+</div>
+
+    {% include "inc/footer.html.twig" %}
+
+{% endblock %}

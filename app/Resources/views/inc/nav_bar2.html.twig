@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="{{ url('app.default.index') }}">
+        <img src="{{ asset('img/Pizza_Patron_Logo.jpg')}}" width="40" height="40" class="d-inline-block align-middle" alt="">
+        Pizza Patron
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ url('app.default.index') }}"><i class="fa fa-cutlery" aria-hidden="true"></i> Menu</a>
+                    <a class="dropdown-item" href="{{ url('app.about.history') }}">A propos de nous</a>
+                    <a class="dropdown-item" href="{{ url('app.about.contact') }}"><i class="fa fa-envelope" aria-hidden="true"></i>
+                        Nous contacter</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item active dropdown mr-5">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                        {% if is_granted('ROLE_ADMIN')!= true %}
+                        {{ app.user.firstName }}
+                        {% else %}
+                            {{ app.user.username }}
+                        {% endif %}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{{ url('app.profiles.usersettings') }}">Votre compte</a>
+                        <a class="dropdown-item" href="{{ url('app.account.orders') }}">Historique de commandes</a>
+                        <a class="dropdown-item" href="{{ url('app.user.logout') }}">Se deconnecter</a>
+                    </div>
+                </li>
+            {% else %}
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('app.user.login') }}">
+                        <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                        Se Connecter
+                    </a>
+                </li>
+            {% endif %}
+                <li class="nav-item active">
+                    <a class="nav-link mr-5 inlin" href="">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></li>
+                            <li class="list-inline-item"><div id="cart"></div></li>
+                        </ul>
+                    </a>
+                </li>
+        </ul>
+    </div>
+</nav>

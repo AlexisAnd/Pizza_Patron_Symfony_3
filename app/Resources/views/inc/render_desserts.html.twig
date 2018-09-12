@@ -1,0 +1,7 @@
+{% for result in results %}
+    <div class="d-inline-flex p-2">
+        <div>{{ result.name }}</div>
+        <div>{{ result.price }}</div>
+        <i class="fa fa-plus-circle" aria-hidden="true" data-quantity="1" data-price="{{ result.price }}" data-name="{{ result.name }}" data-dessert="{{ result.id }}"></i>
+    </div>
+{% endfor %}

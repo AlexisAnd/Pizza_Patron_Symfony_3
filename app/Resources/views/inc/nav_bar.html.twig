@@ -1,0 +1,39 @@
+<header>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="{{ url('app.default.index') }}">
+            <img src="{{ asset('img/Pizza_Patron_Logo.jpg')}}" width="60" height="60" class="d-inline-block align-middle" alt="">
+            Pizza Patron
+        </a>
+
+        <div class="dropdown ml-auto">
+            <button class="btn btn-primary dropup-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{ url('app.default.index') }}">Menu</a>
+                <a class="dropdown-item" href="{{ url('app.about.history') }}">A propos de nous</a>
+                <a class="dropdown-item" href="{{ url('app.about.contact') }}">Nous contacter</a>
+            </div>
+        </div>
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+            <div class="dropdown ml-auto">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>{{ app.user.firstName }}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="{{ url('app.profiles.usersettings') }}">Vos informations</a>
+                <a class="dropdown-item" href="">Vos commande</a>
+                <a class="dropdown-item" href="{{ url('app.user.logout') }}">Se deconnecter</a>
+            </div>
+            </div>
+        {% else %}
+            <a href="{{ path('app.user.login') }}">
+                <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                Se Connecter
+            </a>
+
+        {% endif %}
+    </nav>
+</header>

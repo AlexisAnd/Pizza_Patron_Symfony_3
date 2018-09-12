@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h2 class="mt-4 mb-5 text-center">Vos Commandes</h2>
+    <div class="row">
+                <div class="col"></div>
+                <div class="col-8">
+            {% for result in results %}
+                <ul class="list-group">
+                    <li class="list-group-item mb-2">
+                        <ul class="list-inline">
+                            <li class="list-inline-item pl-3 pr-5 font-weight-bold">Commande #{{ result.id }}</li>
+                            <li class="list-inline-item text-center pr-5">Efectuée le {{ result.completeTimeStamp | date }}</li>
+                            <li class="list-inline-item text-right"><a class="btn btn-info" role="button" href="{{ url('app.account.orderdetails',{id:result.id}) }}">Voir le details</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            {% endfor %}
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+    {% include "inc/footer_fixed.html.twig" %}
+{% endblock %}

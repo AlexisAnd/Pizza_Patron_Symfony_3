@@ -1,0 +1,34 @@
+.dropdown-toggle i {
+    color: white;
+}
+.dropdown-menu i {
+    color: black;
+}
+.bluefont i {
+
+    color: #007BFF;
+}
+.navbar-expand-lg {
+    background-color: #232F3E;
+}
+
+.container-menu {
+    width:90%;
+    margin: 0 auto;
+}
+
+.menu {
+    width:70%;
+}
+.basket {
+    width:30%;
+}
+.renderpizzas {
+    display:flex;
+}
+.pizzas {
+    width:400px;
+}
+.food {
+
+}

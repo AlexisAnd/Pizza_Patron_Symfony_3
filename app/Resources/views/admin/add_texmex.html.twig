@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+
+        <h3>Ajouter un texmex</h3>
+
+
+        {{ form_errors(form.name) }}
+        {{ form_errors(form.price) }}
+
+
+        {{ form_start(form, { 'attr': { 'novalidate': 'novalidate' } }) }}
+
+        <p>
+            {{ form_label(form.name, "Nom:", { 'label_attr': { 'class': 'myclass '}}) }}
+            {{ form_widget(form.name) }}
+        </p>
+        <p>
+            {{ form_label(form.price, "Prix:") }}
+            {{ form_widget(form.price) }}
+        </p>
+
+        <button type="submit"  class="btn btn-primary" name="validation">Valider</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

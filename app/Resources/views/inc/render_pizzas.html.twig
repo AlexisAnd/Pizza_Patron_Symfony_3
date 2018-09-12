@@ -1,0 +1,23 @@
+{% for result in results %}
+
+ <div class="pizzas">
+        <div class="food">
+            <ul>
+                <li><h4>{{ result.name }}</h4></li>
+                <li>{{ result.description }}</li>
+            </ul>
+        </div>
+        <div class="price">
+            <div>Prix Junior {{ result.pricejunior }}€
+                <i class="fa fa-plus-circle" aria-hidden="true" data-quantity="1" data-price="{{ result.pricejunior }}" data-name="{{ result.name }} Junior" data-pizza="{{ result.id }}"></i>
+            </div>
+            <div>Prix Medium {{ result.pricemedium }}€
+                <i class="fa fa-plus-circle" aria-hidden="true" data-quantity="1" data-price="{{ result.pricemedium }}" data-name="{{ result.name }} Medium" data-pizza="{{ result.id }}"></i>
+            </div>
+             <div>Prix Senior{{ result.pricesenor }}€
+                <i class="fa fa-plus-circle" aria-hidden="true" data-quantity="1" data-price="{{ result.pricesenor }}" data-name="{{ result.name }} Senor" data-pizza="{{ result.id }}"></i>
+              </div>
+        </div>
+ </div>
+
+{% endfor %}

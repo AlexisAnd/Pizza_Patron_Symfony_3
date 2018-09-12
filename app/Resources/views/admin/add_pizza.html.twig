@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+
+        <h3>Ajouter une pizza</h3>
+
+
+        {{ form_errors(form.name) }}
+        {{ form_errors(form.description) }}
+        {{ form_errors(form.pricejunior) }}
+        {{ form_errors(form.pricemedium) }}
+        {{ form_errors(form.pricesenor) }}
+
+
+
+
+        {{ form_start(form, { 'attr': { 'novalidate': 'novalidate' } }) }}
+
+        <p>
+            {{ form_label(form.name, "Nom:", { 'label_attr': { 'class': 'myclass '}}) }}
+            {{ form_widget(form.name) }}
+        </p>
+        <p>
+            {{ form_label(form.description, "Description:") }}
+            {{ form_widget(form.description) }}
+        </p>
+        <p>
+            {{ form_label(form.pricejunior, "Prix Junior:") }}
+            {{ form_widget(form.pricejunior) }}
+        </p>
+        <p>
+            {{ form_label(form.pricemedium, "Prix Medium:") }}
+            {{ form_widget(form.pricemedium) }}
+        </p>
+        <p>
+            {{ form_label(form.pricesenor, "Prix Senor:") }}
+            {{ form_widget(form.pricesenor) }}
+        </p>
+            <button type="submit"  class="btn btn-primary" name="validation">Valider</button>
+            {{ form_end(form) }}
+    </div>
+
+{% endblock %}

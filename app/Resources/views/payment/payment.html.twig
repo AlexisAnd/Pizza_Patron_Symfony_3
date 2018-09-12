@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<ul>
+    <li>{{ app.user.firstName }}</li>
+    <li>{{ app.user.lastName }}</li>
+    <li>{{ app.user.address }}</li>
+    <li>{{ app.user.city }}</li>
+    <li>{{ app.user.postalCode }}</li>
+    <li>{{ app.user.phone }}</li>
+</ul>
+
+    {% for list in getlist %}
+        <ul>
+            <li><i class="fa fa-minus-circle"  data-quantity="1" data-itemid="{{ list.id }}"></i></li>
+            <li>{{ list.quantity }}</li>
+            <li>{{ list.name }}</li>
+            <li>{{ list.price * list.quantity |number_format(2, '.', ',') }}</li>
+        </ul>
+    {% endfor %}
+    <p>{{ gettotal.total |number_format(2, '.', ',') }}</p>
+
+        <a class="btn btn-info" role="button" href="{{ url('app.payment.validation') }}">Payer</a>
+
+    {% include "inc/footer_fixed.html.twig" %}
+
+{% endblock %}

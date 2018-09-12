@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mb-5">
+        <h2 class="mt-4 mb-5 text-center">Contact</h2>
+
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-8">
+                <p> Des questions à propos de votre commande ?</p><br>
+                <p>Nous sommes là pour vous aider ! Écrivez-nous à <a href="mailto:contact@pizzapatron.fr">contact@pizzapatron.fr</a> ou appelez-nous au +33 9 42 40 54 07.</p>
+                <p class="bluefont">Vous pouvez aussi nous suivre sur les reseaux sociaux suivants:
+                    <i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></p>
+                <p>Veuillez noter que nous ne pouvons accepter les commandes par téléphone. Si vous souhaitez passer commande, merci de bien vouloir le faire en ligne. Le numéro ci-dessus est exclusivement dédié au service client.</p>
+
+                <p>Pas envie de manger chez vous? Pas de probleme, nous pouvons aussi vous acceuillir dans notre restaurant.</p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.986963644443!2d2.389427015191706!3d48
+                .85845897928752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d8b0e97e6b7%3A0x2bfd7353bd31c461!2s8
+                +Rue+du+Repos%2C+75020+Paris!5e0!3m2!1sen!2sfr!4v1500725854847" width="800" height="450" frameborder="0"
+                        style="border:0" allowfullscreen></iframe>
+            </div>
+            <div class="col"></div>
+        </div>
+
+    </div>
+    {% include "inc/footer.html.twig" %}
+
+{% endblock %}
